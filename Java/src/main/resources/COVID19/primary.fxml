@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="COVID19.PrimaryController">
+   <children>
+      <VBox alignment="TOP_CENTER" layoutX="11.2" layoutY="-50.0" prefHeight="74.0" prefWidth="1178.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Text fx:id="periodoId" fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="Análise COVID Sergipe: 2020-2024" textAlignment="CENTER" wrappingWidth="1180.0031356811523">
+               <font>
+                  <Font name="Dubai Medium" size="44.0" />
+               </font>
+            </Text>
+         </children>
+      </VBox>
+      <BorderPane layoutX="273.6000061035156" layoutY="330.3999938964844" prefHeight="26.0" prefWidth="508.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+         <left>
+            <ChoiceBox fx:id="choiceSemana" prefHeight="26.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="20.0" />
+               </BorderPane.margin></ChoiceBox>
+         </left>
+         <center>
+            <ChoiceBox fx:id="choiceAno" prefHeight="26.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets right="20.0" />
+               </BorderPane.margin></ChoiceBox>
+         </center>
+         <right>
+            <Button fx:id="confirmarBtn" mnemonicParsing="false" onAction="#procurarDados" text="Confirmar" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+      <VBox layoutX="204.0" layoutY="135.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <Text fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="CASOS" textAlignment="CENTER" wrappingWidth="500.5366744995117">
+               <font>
+                  <Font name="Dubai Medium" size="38.0" />
+               </font>
+            </Text>
+            <HBox prefHeight="58.0" prefWidth="462.0">
+               <children>
+                  <Text fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="Casos do período:" wrappingWidth="240.26995086669922">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="casosId" fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="240.26995086669922">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="58.0" prefWidth="462.0">
+               <children>
+                  <Text fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="Casos acumulados:" wrappingWidth="259.46996307373047">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="casosAccId" fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="240.26995086669922">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <ScrollPane prefHeight="457.0" prefWidth="501.0">
+               <content>
+                  <VBox prefHeight="1039.0" prefWidth="484.0">
+                     <children>
+                        <BarChart fx:id="barChart1" prefHeight="330.0" prefWidth="484.0">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </BarChart>
+                        <PieChart fx:id="pieChartId" prefHeight="357.0" prefWidth="484.0" />
+                        <AreaChart fx:id="areaChart1">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </AreaChart>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+      <VBox layoutX="640.0" layoutY="101.0" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <Text fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="ÓBITOS" textAlignment="CENTER" wrappingWidth="500.5366744995117">
+               <font>
+                  <Font name="Dubai Medium" size="38.0" />
+               </font>
+            </Text>
+            <HBox prefHeight="58.0" prefWidth="462.0">
+               <children>
+                  <Text fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="Óbitos do período:" wrappingWidth="249.86998748779297">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="obitosId" fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="240.26995086669922">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox prefHeight="58.0" prefWidth="462.0">
+               <children>
+                  <Text fx:id="obitosAccId" fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="Óbitos acumulados:" wrappingWidth="263.7366256713867">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="obitosAccId" fill="#2f49a6" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="240.26995086669922">
+                     <font>
+                        <Font name="Dubai Medium" size="31.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <ScrollPane prefHeight="457.0" prefWidth="501.0">
+               <content>
+                  <VBox prefHeight="1039.0" prefWidth="484.0">
+                     <children>
+                        <BarChart fx:id="barChart2" prefHeight="330.0" prefWidth="484.0">
+                           <xAxis>
+                              <CategoryAxis side="BOTTOM" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis side="LEFT" />
+                           </yAxis>
+                        </BarChart>
+                        <PieChart fx:id="pieChartId2" prefHeight="357.0" prefWidth="484.0" />
+                        <AreaChart fx:id="areaChart2">
+                          <xAxis>
+                            <CategoryAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </AreaChart>
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

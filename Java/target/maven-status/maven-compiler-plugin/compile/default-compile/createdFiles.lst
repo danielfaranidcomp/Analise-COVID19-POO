@@ -1,0 +1,5 @@
+COVID19\App.class
+COVID19\DB_Obitos_Casos.class
+module-info.class
+COVID19\CelulaDbObitos.class
+COVID19\PrimaryController.class
