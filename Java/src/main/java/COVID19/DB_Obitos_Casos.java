@@ -15,7 +15,7 @@ public class DB_Obitos_Casos {
     
     public DB_Obitos_Casos() {
         
-        try (BufferedReader br = new BufferedReader(new FileReader("C:\\Users\\danie\\Downloads\\Projeto POO - Análise Explanatória do COVID em Sergipe\\COVID19\\src\\main\\java\\COVID19\\DB-Obitos-Casos.csv"))){
+        try (BufferedReader br = new BufferedReader(new FileReader("src\\main\\java\\COVID19\\DB-Obitos-Casos.csv"))){
             String linha = br.readLine();
             while(linha != null) {
                 String[] itensDivididos = linha.split(",");
