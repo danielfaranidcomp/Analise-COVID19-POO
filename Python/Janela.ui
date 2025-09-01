@@ -100,9 +100,9 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>-17</y>
-       <width>408</width>
-       <height>1342</height>
+       <y>0</y>
+       <width>429</width>
+       <height>439</height>
       </rect>
      </property>
      <layout class="QFormLayout" name="formLayout">
@@ -128,39 +128,27 @@
         </property>
        </widget>
       </item>
-      <item row="5" column="0" colspan="2">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QWidget" name="graficoBarraCasos" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>389</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="graficoPizzaCasos" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>389</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QWidget" name="graficoLinhaCasos" native="true">
-          <property name="minimumSize">
-           <size>
-            <width>0</width>
-            <height>389</height>
-           </size>
-          </property>
-         </widget>
-        </item>
-       </layout>
+      <item row="0" column="1">
+       <widget class="QLabel" name="casosPeriodo">
+        <property name="font">
+         <font>
+          <family>Dubai Medium</family>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">color: rgb(103, 118, 255)</string>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
       </item>
       <item row="3" column="0">
        <widget class="QLabel" name="label_3">
@@ -186,28 +174,6 @@
       </item>
       <item row="3" column="1">
        <widget class="QLabel" name="casosAcc">
-        <property name="font">
-         <font>
-          <family>Dubai Medium</family>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="layoutDirection">
-         <enum>Qt::LeftToRight</enum>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">color: rgb(103, 118, 255)</string>
-        </property>
-        <property name="text">
-         <string>0</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QLabel" name="casosPeriodo">
         <property name="font">
          <font>
           <family>Dubai Medium</family>

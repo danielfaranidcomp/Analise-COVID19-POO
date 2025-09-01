@@ -3,10 +3,6 @@ import sys
 import os
 from PyQt5 import QtWidgets
 from DbObitosCasos import DbObitosCasos
-from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget
-from PyQt5.QtChart import QChart, QChartView, QBarSet, QBarSeries, QBarCategoryAxis, QValueAxis
-from PyQt5.QtGui import QPainter
-from PyQt5.QtCore import Qt
 
 class janelaInicial(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -24,29 +20,6 @@ class janelaInicial(QtWidgets.QMainWindow, Ui_MainWindow):
         self.obitosPeriodo.setText("6.577")
         self.botaoConfirmar.clicked.connect(self.pegarDados)
 
-        set0 = QBarSet("Casos")
-        set0 << 368215 << 368215
-        series = QBarSeries()
-        series.append(set0)
-        chart = QChart()
-        chart.addSeries(series)
-        chart.setTitle("My Bar Chart")
-        chart.setAnimationOptions(QChart.SeriesAnimations)
-        # Criar eixo Y numérico
-        axisY = QValueAxis()
-        axisY.setRange(0, 358215)
-        axisY.setTickCount(7)       
-        axisY.setLabelFormat("%d")  
-        chart.addAxis(axisY, Qt.AlignLeft)
-        # Ligar o eixo Y à série
-        series.attachAxis(axisY)
-        # cria um layout dentro do widget
-        layout = QVBoxLayout(self.graficoBarraCasos)
-        self.graficoBarraCasos.setLayout(layout)
-        chartView = QChartView(chart)
-        chartView.setRenderHint(QPainter.Antialiasing)
-        self.graficoBarraCasos.layout().addWidget(chartView)
-
     def pegarDados(self):
         try:
             id = int(self.escolhaAno.currentText()) * 100 + int(self.escolhaSemana.currentText())
@@ -57,29 +30,6 @@ class janelaInicial(QtWidgets.QMainWindow, Ui_MainWindow):
             self.obitosAcc.setText(str(informacoes["obitosAcc"]))
             self.obitosPeriodo.setText(str(informacoes["obitos"]))
             self.titulo.setText(f"Análise COVID Sergipe {informacoes["semana"]}ª semana de {informacoes["ano"]}")
-
-            set0 = QBarSet("Casos")
-            set0 << informacoes["casos"] << informacoes["casosAcc"]
-            series = QBarSeries()
-            series.append(set0)
-            chart = QChart()
-            chart.addSeries(series)
-            chart.setTitle("My Bar Chart")
-            chart.setAnimationOptions(QChart.SeriesAnimations)
-            # Criar eixo Y numérico
-            axisY = QValueAxis()
-            axisY.setRange(0, 358215)
-            axisY.setTickCount(7)       
-            axisY.setLabelFormat("%d")  
-            chart.addAxis(axisY, Qt.AlignLeft)
-            # Ligar o eixo Y à série
-            series.attachAxis(axisY)
-            # cria um layout dentro do widget
-            layout = QVBoxLayout(self.graficoBarraCasos)
-            self.graficoBarraCasos.setLayout(layout)
-            chartView = QChartView(chart)
-            chartView.setRenderHint(QPainter.Antialiasing)
-            self.graficoBarraCasos.layout().addWidget(chartView)
             
         except Exception as e:
             msg = QtWidgets.QMessageBox()
