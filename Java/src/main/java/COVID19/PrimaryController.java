@@ -88,10 +88,12 @@ public class PrimaryController implements Initializable {
         XYChart.Series serie1 = new XYChart.Series();
         serie1.setName("Casos em Sergipe (" + informacoes.retornarCasos() + ")");
         serie1.getData().add(new XYChart.Data("Casos", informacoes.retornarCasos()));
+        serie1.getData().add(new XYChart.Data("Casos Acumulados", informacoes.retornarCasosAcc()));
         
         XYChart.Series serie2 = new XYChart.Series();       
         serie2.setName("Óbitos em Sergipe" + informacoes.retornarObitos() + ")");
         serie2.getData().add(new XYChart.Data("Óbitos", informacoes.retornarObitos()));
+        serie2.getData().add(new XYChart.Data("Óbitos Acumulados", informacoes.retornarObitosAcc()));
         
         barChart1.getData().clear();
         barChart2.getData().clear();
@@ -166,9 +168,11 @@ public class PrimaryController implements Initializable {
         XYChart.Series serie1 = new XYChart.Series();
         serie1.setName("Casos em Sergipe");
         serie1.getData().add(new XYChart.Data("Casos", 368215));
+        serie1.getData().add(new XYChart.Data("Casos Acumulados", 368215));
         XYChart.Series serie2 = new XYChart.Series();
         serie2.setName("Óbitos em Sergipe");
         serie2.getData().add(new XYChart.Data("Óbitos", 6577));
+        serie2.getData().add(new XYChart.Data("Óbitos Acumulados", 6577));
         barChart1.getData().add(serie1);
         barChart2.getData().add(serie2);
         
